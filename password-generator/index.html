@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas | César Aranda</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1 class="titulo">Password Generator</h1>
+
+        <div class="pantalla">
+            <span id="passwordDisplay" class="password-placeholder">PTx1f5DaFX</span>
+            <button id="btnCopiar" class="btn-copiar" aria-label="Copiar contraseña">
+                <i class="far fa-copy"></i>
+            </button>
+        </div>
+
+        <div class="controles">
+            
+            <div class="longitud-header">
+                <label for="sliderLongitud">Character Length</label>
+                <span id="longitudValor" class="longitud-valor">10</span>
+            </div>
+            
+            <input type="range" id="sliderLongitud" min="8" max="20" value="10" class="slider">
+
+            <div class="opciones">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="chkMayusculas" checked>
+                    <span class="checkmark"></span>
+                    Include Uppercase Letters
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="chkMinusculas" checked>
+                    <span class="checkmark"></span>
+                    Include Lowercase Letters
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="chkNumeros" checked>
+                    <span class="checkmark"></span>
+                    Include Numbers
+                </label>
+                <label class="checkbox-container">
+                    <input type="checkbox" id="chkSimbolos">
+                    <span class="checkmark"></span>
+                    Include Symbols
+                </label>
+            </div>
+
+            <div class="fuerza-contenedor">
+                <span class="fuerza-label">STRENGTH</span>
+                <div class="fuerza-medidor">
+                    <span id="fuerzaTexto" class="fuerza-texto">MEDIUM</span>
+                    <div class="barras">
+                        <div class="barra activa-media"></div>
+                        <div class="barra activa-media"></div>
+                        <div class="barra activa-media"></div>
+                        <div class="barra"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btnGenerar" class="btn-generar">
+                GENERATE <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

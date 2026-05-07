@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    --bg-main: #18171F;
+    --bg-card: #24232B;
+    --neon-green: #A4FFAF;
+    --text-grey: #817D92;
+    --text-white: #E6E5EA;
+    --bg-darker: #18171F;
+    
+    /* Colores de fuerza */
+    --fuerza-debil: #F64A4A;
+    --fuerza-media: #F8CB63;
+    --fuerza-fuerte: #A4FFAF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Usamos tipografía monospace para que parezca código */
+    font-family: 'JetBrains Mono', monospace; 
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 450px;
+}
+
+.titulo {
+    text-align: center;
+    color: var(--text-grey);
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Pantalla de contraseña */
+.pantalla {
+    background-color: var(--bg-card);
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.password-placeholder {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: 2px;
+}
+
+.btn-copiar {
+    background: none;
+    border: none;
+    color: var(--neon-green);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-copiar:hover {
+    color: #fff;
+}
+
+/* Controles */
+.controles {
+    background-color: var(--bg-card);
+    padding: 25px;
+}
+
+.longitud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.longitud-valor {
+    color: var(--neon-green);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Slider Personalizado */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: var(--bg-darker);
+    outline: none;
+    margin-bottom: 35px;
+    accent-color: var(--neon-green); /* Soporte moderno para pintar el slider */
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--text-white);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    background: var(--bg-main);
+    border: 2px solid var(--neon-green);
+}
+
+/* Opciones / Checkboxes */
+.opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    user-select: none;
+}
+
+.checkbox-container input {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    accent-color: var(--neon-green);
+    cursor: pointer;
+}
+
+/* Fuerza */
+.fuerza-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-darker);
+    padding: 15px 25px;
+    margin-bottom: 25px;
+}
+
+.fuerza-label {
+    color: var(--text-grey);
+    font-weight: 700;
+}
+
+.fuerza-medidor {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.fuerza-texto {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.barras {
+    display: flex;
+    gap: 5px;
+}
+
+.barra {
+    width: 10px;
+    height: 28px;
+    border: 2px solid var(--text-white);
+}
+
+/* Colores dinámicos para las barras (JS los cambiará) */
+.activa-baja { background-color: var(--fuerza-debil); border-color: var(--fuerza-debil); }
+.activa-media { background-color: var(--fuerza-media); border-color: var(--fuerza-media); }
+.activa-alta { background-color: var(--fuerza-fuerte); border-color: var(--fuerza-fuerte); }
+
+/* Botón Generar */
+.btn-generar {
+    width: 100%;
+    background-color: var(--neon-green);
+    color: var(--bg-card);
+    border: 2px solid var(--neon-green);
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-generar:hover {
+    background-color: transparent;
+    color: var(--neon-green);
+}
